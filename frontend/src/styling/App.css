@@ -7,6 +7,7 @@ body {
 .app-container {
     display: flex;
     flex-direction: column;
+    align-items: center; /* Center content horizontally within the app container */
 }
 
 .navbar {
@@ -16,6 +17,8 @@ body {
     background: white;
     padding: 15px 30px;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    width: 100%; /* Make navbar full width if needed */
+    box-sizing: border-box; /* Include padding and border in element's total width and height */
 }
 
 .navbar .logo {
@@ -48,76 +51,51 @@ body {
     color: white;
 }
 
-.main-content {
-    display: flex;
-    align-items: center;
-}
-
-.sidebar {
-    width: 50%;
-    min-height: 550px;
-    align-content: center;
-    background: linear-gradient(to top, #a0e1ff, #739fe5);
-    padding: 70px;
+/* Modified main content to center items */
+.main-content-centered {
     display: flex;
     flex-direction: column;
-    align-items: center;
+    align-items: center; /* Center items horizontally */
+    padding: 20px; /* Add some padding around the content */
 }
 
-.sidebar h1 {
-    font-size: 50px;
-    text-align: center;
-    color: white;
-}
-
-.sidebar h2 {
-    font-size: 20px;
-    margin-bottom: 50px;
-    text-align: center;
-    color: white;
-}
-
-.upload-btn, .generate-btn, .save-btn, .new-outfit-btn, .confirm-btn, .cancel-btn, .edit-btn {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 8px;
-    padding: 12px 20px;
-    margin: 10px 0;
-    background: linear-gradient(to left, #212f57, #2d4883);
-    color: white;
-    border: none;
-    border-radius: 25px;
-    cursor: pointer;
-    width: 150px;
-    height: 50px;
-    box-sizing: border-box;
-    font-size: medium;
+.main-content-centered h1 {
+    font-size: 60px; /* Adjust as needed */
     font-weight: bold;
-    font-family: 'Poppins', sans-serif;
-    text-align: center;
+    color: #333; /* Adjust as needed */
+    margin-bottom: 30px; /* Space between heading and gallery */
+    text-align: center; /* Ensure text itself is centered */
 }
 
 .image-gallery {
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: center; /* Center the image grid horizontally */
+    margin-bottom: 30px; /* Space between gallery and sidebar content */
+    width: 90%; /* Adjust width of the gallery container */
 }
 
 .image-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 15px;
+    width: 100%; /* Make grid take full width of its container */
+    max-width: 600px; /* Optional: set a maximum width for the grid */
 }
 
 .image-container {
     position: relative;
     height: 175px;
+    width: 100%; /* Make each container take full width of its grid cell */
+    overflow: hidden; /* Clip images that might overflow */
+    display: flex;
+    justify-content: center; /* Center image horizontally in container */
+    align-items: center; /* Center image vertically in container */
 }
 
 .image-container img {
-    width: 175px;
-    height: 175px;
+    width: 100%;
+    height: 100%;
     border-radius: 8px;
     object-fit: cover;
 }
@@ -130,7 +108,7 @@ body {
 }
 
 .image-placeholder {
-    width: 175px;
+    width: 100%;
     height: 175px;
     border-radius: 8px;
     background-color: lightgray;
@@ -371,24 +349,10 @@ select {
     text-align: center;
     white-space: nowrap; /* Prevents wrapping */
 }
-.sidebar {
-    justify-content: center; /* centra el contenido verticalmente */
-    gap: 40px; /* espacio entre título e iconos */
-    height: 100vh; /* ocupa toda la altura visible */
-}
 
-.sidebar h1 {
-    font-size: 70px;
-    font-weight: 800;
-    color: white;
-    text-align: center;
-    margin-bottom: 20px;
-}
-
-.upload-btn, .generate-btn, .save-btn {
-    width: 200px;
-    height: 60px;
-    border-radius: 30px;
-    font-size: 18px;
-    gap: 10px;
-}
+/* Styles for the sidebar content below the gallery */
+.sidebar-below-gallery {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding:
